@@ -2,10 +2,7 @@ function addTask() {
   const taskInput = document.getElementById("taskInput");
   const taskText = taskInput.value.trim();
 
-  if (taskText === "") {
-    alert("Please enter a task.");
-    return;
-  }
+  if (taskText === "") return; // Skip empty tasks
 
   const taskList = document.getElementById("taskList");
 
@@ -39,3 +36,13 @@ function addTask() {
 
   taskInput.value = "";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("taskInput");
+
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      addTask();
+    }
+  });
+});
