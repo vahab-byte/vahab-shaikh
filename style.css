@@ -4,7 +4,7 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: chocolate;
   background-size: 400% 400%;
-
+  animation: rainbowBG 15s ease infinite;
   padding: 40px;
   display: flex;
   justify-content: center;
@@ -22,6 +22,7 @@
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background: lightyellow;
   background-size: 400% 400%;
+  animation: rainbowBG 15s ease infinite;
   justify-content: center;
    
     }
@@ -101,4 +102,26 @@
     .task-input button:hover {
       background-color: #0056b3;
     }
+.toast {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 16px;
+  margin-top: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  animation: fadein 0.4s, fadeout 0.4s 2.6s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  font-size: 14px;
+}
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+
 
