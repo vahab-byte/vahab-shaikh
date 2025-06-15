@@ -1,3 +1,13 @@
+function showToast(message) {
+  const container = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+  container.appendChild(toast);
+
+  setTimeout(() => toast.remove(), 3000);
+}
+
 function addTask() {
   const taskInput = document.getElementById("taskInput");
   const taskText = taskInput.value.trim();
@@ -5,7 +15,6 @@ function addTask() {
   if (taskText === "") return; 
 
   const taskList = document.getElementById("taskList");
-
   const li = document.createElement("li");
 
   const taskLeft = document.createElement("div");
@@ -23,8 +32,13 @@ function addTask() {
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "Delete";
   deleteBtn.className = "delete-btn";
+
+
   deleteBtn.onclick = function () {
-    li.remove();
+    const confirmDelete = confirm("Are you sure you want to delete this todo?");
+    if (confirmDelete) {
+      li.remove();
+    }
   };
 
   taskLeft.appendChild(checkbox);
@@ -35,6 +49,9 @@ function addTask() {
   taskList.appendChild(li);
 
   taskInput.value = "";
+
+  
+  showToast("Your data saved successfully");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -46,9 +63,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-deleteBtn.onclick = function () {
-  const confirmDelete = confirm("Are you sure you want to delete this todo?");
-  if (confirmDelete) {
-    li.remove();
-  }
-};
