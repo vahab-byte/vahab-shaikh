@@ -1,4 +1,4 @@
-  <style>
+
   body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background: linear-gradient(120deg, red, orange, yellow, green, cyan, blue, violet);
@@ -109,4 +109,4 @@
     .task-input button:hover {
       background-color: #0056b3;
     }
-  </style>
+
