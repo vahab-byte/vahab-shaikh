@@ -46,3 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+deleteBtn.onclick = function () {
+  const confirmDelete = confirm("Are you sure you want to delete this todo?");
+  if (confirmDelete) {
+    li.remove();
+  }
+};
