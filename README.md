@@ -27,6 +27,21 @@ A minimal and interactive to-do list web application built using **HTML**, **CSS
 
 ---
 
+## 🚀 How to Use
+
+1. Clone or download the project folder
+2. Open `index.html` in your browser
+3. Start adding, completing, and deleting tasks!
+4. All changes are saved automatically using `localStorage`
+
+---
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
 ## 📂 Project Structure
 
  README.md # Project documentation
