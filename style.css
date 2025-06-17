@@ -4,7 +4,6 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: chocolate;
   background-size: 400% 400%;
-  animation: rainbowBG 15s ease infinite;
   padding: 40px;
   display: flex;
   justify-content: center;
@@ -18,7 +17,6 @@
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background: lightyellow;
   background-size: 400% 400%;
-  animation: rainbowBG 15s ease infinite;
   justify-content: center;
    
     }
