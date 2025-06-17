@@ -1,11 +1,24 @@
-
 function showToast(message) {
   const container = document.getElementById("toast-container");
+
+  const existingToast = container.querySelector(".toast");
+  if (existingToast) {
+    existingToast.remove();
+  }
+
+
   const toast = document.createElement("div");
   toast.className = "toast";
   toast.textContent = message;
+
   container.appendChild(toast);
-  setTimeout(() => toast.remove(), 3000);
+
+  
+  setTimeout(() => {
+    if (toast.parentNode === container) {
+      toast.remove();
+    }
+  }, 3000);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -17,9 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  loadTasks(); 
+  loadTasks();
 });
-
 
 function saveTasksToLocalStorage() {
   const tasks = [];
@@ -31,12 +43,10 @@ function saveTasksToLocalStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
- 
 function loadTasks() {
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   tasks.forEach(task => addTask(task.text, task.done));
 }
-
 
 function addTask(taskText = null, isCompleted = false) {
   const taskInput = document.getElementById("taskInput");
@@ -58,7 +68,7 @@ function addTask(taskText = null, isCompleted = false) {
 
   checkbox.onchange = function () {
     taskSpan.classList.toggle("task-done", this.checked);
-    showToast("Marked as complete");
+    showToast(this.checked ? "Marked as complete" : "Marked as incomplete");
     saveTasksToLocalStorage();
   };
 
